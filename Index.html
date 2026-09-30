@@ -1,0 +1,3032 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shin Megami Tensei III: Nocturne</title>
+
+    <style>
+
+        /* =========================
+           CONFIGURACIÓN GENERAL
+        ========================== */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #080808;
+            color: white;
+        }
+
+        .contenedor {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           ENCABEZADO
+        ========================== */
+
+        header {
+            background: #101010;
+            padding: 30px;
+            text-align: center;
+            border-bottom: 3px solid #8b0000;
+        }
+
+        header h1 {
+            font-size: 40px;
+            color: #dddddd;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            margin-top: 10px;
+            color: #999999;
+        }
+
+
+        /* =========================
+           PORTADA
+        ========================== */
+
+        .portada {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .portada img {
+            width: 350px;
+            height: 500px;
+            object-fit: cover;
+
+            border: 3px solid #555555;
+
+            box-shadow:
+                0 0 20px rgba(139, 0, 0, 0.6);
+        }
+
+
+        /* =========================
+           INFORMACIÓN
+        ========================== */
+
+        .informacion {
+            margin-top: 50px;
+            background-color: #151515;
+            padding: 30px;
+
+            border-left: 5px solid #8b0000;
+        }
+
+        .informacion h2,
+        .seccion h2 {
+            color: #d00000;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .informacion p {
+            color: #cccccc;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================
+           DATOS DEL JUEGO
+        ========================== */
+
+        .datos {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 15px;
+
+            margin-top: 25px;
+        }
+
+        .dato {
+            background: #202020;
+            padding: 15px;
+
+            border: 1px solid #333333;
+        }
+
+        .dato strong {
+            color: #d00000;
+        }
+
+
+        /* =========================
+           GALERÍA
+        ========================== */
+
+        .galeria {
+            margin-top: 55px;
+        }
+
+        .galeria h2 {
+            text-align: center;
+            color: #d00000;
+            margin-bottom: 25px;
+        }
+
+        .imagenes {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+        .imagen {
+            background-color: #151515;
+            padding: 10px;
+
+            border: 1px solid #333333;
+        }
+
+        .imagen img {
+            width: 100%;
+            height: 250px;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+        .imagen p {
+            text-align: center;
+            color: #888888;
+
+            padding: 12px;
+        }
+
+
+        /* =========================
+           SECCIÓN DEMONIOS
+        ========================== */
+
+        .seccion {
+            margin-top: 70px;
+        }
+
+        .seccion-introduccion {
+            background-color: #151515;
+
+            padding: 30px;
+
+            border-left: 5px solid #8b0000;
+
+            margin-bottom: 35px;
+        }
+
+        .seccion-introduccion p {
+            color: #cccccc;
+
+            line-height: 1.8;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================
+           CATEDRAL DE LAS SOMBRAS
+        ========================== */
+
+        .catedral {
+            background: linear-gradient(
+                135deg,
+                #111111,
+                #1b0b0b
+            );
+
+            padding: 30px;
+
+            border: 1px solid #4d1717;
+
+            margin-top: 30px;
+        }
+
+        .catedral h3 {
+            color: #e00000;
+
+            font-size: 25px;
+
+            margin-bottom: 15px;
+        }
+
+        .catedral p {
+            color: #cccccc;
+
+            line-height: 1.8;
+
+            margin-bottom: 15px;
+        }
+
+        .lista-catedral {
+            margin-top: 20px;
+
+            padding-left: 25px;
+
+            color: #bbbbbb;
+
+            line-height: 2;
+        }
+
+
+        /* =========================
+           TÍTULO DE DEMONIOS
+        ========================== */
+
+        .titulo-demonios {
+            text-align: center;
+
+            color: #d00000;
+
+            font-size: 32px;
+
+            margin-top: 60px;
+
+            margin-bottom: 35px;
+
+            border-bottom: 1px solid #441111;
+
+            padding-bottom: 15px;
+        }
+
+
+        /* =========================
+           RAZAS
+        ========================== */
+
+        .raza {
+            margin-top: 45px;
+        }
+
+        .raza-titulo {
+            background-color: #181818;
+
+            border-left: 5px solid #a00000;
+
+            padding: 15px 20px;
+
+            margin-bottom: 20px;
+
+            color: #eeeeee;
+
+            font-size: 25px;
+        }
+
+        .raza-titulo span {
+            color: #777777;
+
+            font-size: 15px;
+
+            margin-left: 10px;
+        }
+
+        /* =========================
+   BOSSES
+========================= */
+
+.bosses {
+    width: 90%;
+    max-width: 1200px;
+    margin: 60px auto;
+}
+
+.bosses h2 {
+    color: #d00000;
+    font-size: 40px;
+    border-bottom: 2px solid #d00000;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.bosses-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.boss-card {
+    background: #111;
+    border: 1px solid #700000;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.boss-card:hover {
+    transform: translateY(-5px);
+    border-color: #ff0000;
+    box-shadow: 0 0 15px #600000;
+}
+
+.boss-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+}
+
+.boss-info {
+    padding: 15px;
+}
+
+.boss-info h3 {
+    color: white;
+    margin: 0 0 8px 0;
+    font-size: 19px;
+}
+
+.boss-info p {
+    color: #e00000;
+    margin: 0;
+    font-weight: bold;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .bosses-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .bosses-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 450px) {
+
+    .bosses-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================
+   BOSSES
+========================= */
+
+.bosses {
+    width: 90%;
+    max-width: 1200px;
+    margin: 60px auto;
+}
+
+.bosses h2 {
+    color: #d00000;
+    font-size: 40px;
+    border-bottom: 2px solid #d00000;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.bosses-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.boss-card {
+    background: #111;
+    border: 1px solid #700000;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.boss-card:hover {
+    transform: translateY(-5px);
+    border-color: #ff0000;
+    box-shadow: 0 0 15px #600000;
+}
+
+.boss-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+}
+
+.boss-info {
+    padding: 15px;
+}
+
+.boss-info h3 {
+    color: white;
+    margin: 0 0 8px 0;
+    font-size: 19px;
+}
+
+.boss-info p {
+    color: #e00000;
+    margin: 0;
+    font-weight: bold;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .bosses-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .bosses-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 450px) {
+    .bosses-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+        /* =========================
+           TARJETAS DE DEMONIOS
+        ========================== */
+
+        .demonios-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .demonio {
+            background-color: #151515;
+
+            border: 1px solid #333333;
+
+            transition: 0.3s;
+
+            overflow: hidden;
+        }
+
+        .demonio:hover {
+            transform: translateY(-5px);
+
+            border-color: #9b0000;
+
+            box-shadow:
+                0 0 15px rgba(139, 0, 0, 0.35);
+        }
+
+        .demonio img {
+            width: 100%;
+
+            height: 220px;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+        .demonio-contenido {
+            padding: 20px;
+        }
+
+        .demonio h4 {
+            color: #eeeeee;
+
+            font-size: 22px;
+
+            margin-bottom: 8px;
+        }
+
+        .nivel {
+            color: #d00000;
+
+            font-weight: bold;
+
+            margin-bottom: 12px;
+        }
+
+        .demonio p {
+            color: #aaaaaa;
+
+            line-height: 1.6;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           CONSEGUIR DEMONIOS
+        ========================== */
+
+        .metodos {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+
+            margin-top: 25px;
+        }
+
+        .metodo {
+            background-color: #151515;
+
+            padding: 25px;
+
+            border-top: 3px solid #8b0000;
+        }
+
+        .metodo h3 {
+            color: #dddddd;
+
+            margin-bottom: 12px;
+        }
+
+        .metodo p {
+            color: #999999;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           PIE DE PÁGINA
+        ========================== */
+
+        footer {
+            margin-top: 70px;
+
+            padding: 30px;
+
+            text-align: center;
+
+            background-color: #101010;
+
+            border-top: 2px solid #333333;
+
+            color: #666666;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 850px) {
+
+            .demonios-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .metodos {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        @media (max-width: 650px) {
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            .datos {
+                grid-template-columns: 1fr;
+            }
+
+            .imagenes {
+                grid-template-columns: 1fr;
+            }
+
+            .demonios-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portada img {
+                width: 280px;
+                height: 420px;
+            }
+        }
+        /* =========================
+   PERSONAJES
+========================= */
+
+.personajes {
+    width: 90%;
+    max-width: 1200px;
+    margin: 60px auto;
+}
+
+.personajes h2,
+.facciones h2 {
+    color: #d00000;
+    font-size: 40px;
+    border-bottom: 2px solid #d00000;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.personajes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.personaje-card {
+    background: #111;
+    border: 1px solid #700000;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.personaje-card:hover,
+.faccion-card:hover {
+    transform: translateY(-5px);
+    border-color: #ff0000;
+    box-shadow: 0 0 15px #600000;
+}
+
+.personaje-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+}
+
+.personaje-info {
+    padding: 18px;
+}
+
+.personaje-info h3 {
+    color: #e00000;
+    margin: 0 0 10px 0;
+    font-size: 21px;
+}
+
+.personaje-info p {
+    color: #cccccc;
+    line-height: 1.5;
+    margin: 0;
+}
+
+
+/* =========================
+   FACCIONES
+========================= */
+
+.facciones {
+    width: 90%;
+    max-width: 1200px;
+    margin: 60px auto;
+}
+
+.facciones-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.faccion-card {
+    background: #111;
+    border: 1px solid #700000;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.faccion-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+.faccion-info {
+    padding: 20px;
+}
+
+.faccion-info h3 {
+    color: #e00000;
+    font-size: 23px;
+    margin: 0 0 8px 0;
+}
+
+.faccion-info h4 {
+    color: #ffffff;
+    margin: 0 0 12px 0;
+    font-size: 16px;
+}
+
+.faccion-info p {
+    color: #cccccc;
+    line-height: 1.5;
+    margin: 0;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .personajes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .facciones-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .personajes-grid,
+    .facciones-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+.invitados {
+    width: 90%;
+    max-width: 1200px;
+    margin: 60px auto;
+}
+
+.invitados h2 {
+    color: #d00000;
+    font-size: 40px;
+    border-bottom: 2px solid #d00000;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.invitados-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.invitado-card {
+    background: #111;
+    border: 1px solid #700000;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.invitado-card:hover {
+    transform: translateY(-5px);
+    border-color: #ff0000;
+    box-shadow: 0 0 15px #600000;
+}
+
+.invitado-card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+}
+
+.invitado-info {
+    padding: 22px;
+}
+
+.invitado-info h3 {
+    color: #e00000;
+    font-size: 26px;
+    margin: 0 0 20px 0;
+}
+
+.invitado-info h4 {
+    color: #ffffff;
+    font-size: 17px;
+    margin: 15px 0 6px 0;
+}
+
+.invitado-info p {
+    color: #cccccc;
+    line-height: 1.5;
+    margin: 0;
+}
+
+@media (max-width: 700px) {
+    .invitados-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 450px) {
+    .invitados h2 {
+        font-size: 30px;
+    }
+
+    .invitado-card img {
+        height: 260px;
+    }
+}
+.red-amala {
+    width: 90%;
+    max-width: 1200px;
+    margin: 60px auto;
+}
+
+.red-amala h2 {
+    color: #d00000;
+    font-size: 40px;
+    border-bottom: 2px solid #d00000;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.amala-introduccion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.amala-introduccion img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #700000;
+}
+
+.amala-texto h3,
+.amala-saga h3 {
+    color: #e00000;
+    font-size: 26px;
+    margin-top: 0;
+}
+
+.amala-texto p,
+.amala-saga p {
+    color: #cccccc;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.amala-conexion {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.amala-box {
+    background: #111;
+    border: 1px solid #700000;
+    border-radius: 8px;
+    padding: 22px;
+    transition: 0.3s;
+}
+
+.amala-box:hover {
+    transform: translateY(-5px);
+    border-color: #ff0000;
+    box-shadow: 0 0 15px #600000;
+}
+
+.amala-box h3 {
+    color: #e00000;
+    font-size: 21px;
+    margin-top: 0;
+}
+
+.amala-box p {
+    color: #cccccc;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+.amala-saga {
+    background: #0d0d0d;
+    border-left: 4px solid #d00000;
+    padding: 25px;
+    border-radius: 5px;
+}
+
+.amala-saga h3 {
+    margin-bottom: 15px;
+}
+
+.amala-saga p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 800px) {
+    .amala-introduccion {
+        grid-template-columns: 1fr;
+    }
+
+    .amala-conexion {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    .red-amala h2 {
+        font-size: 30px;
+    }
+
+    .amala-introduccion img {
+        height: 250px;
+    }
+}
+.otros-juegos {
+    width: 90%;
+    max-width: 1200px;
+    margin: 60px auto;
+}
+
+.otros-juegos h2 {
+    color: #d00000;
+    font-size: 40px;
+    border-bottom: 2px solid #d00000;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.otros-juegos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.juego-card {
+    background: #111;
+    border: 1px solid #700000;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.juego-card:hover {
+    transform: translateY(-5px);
+    border-color: #ff0000;
+    box-shadow: 0 0 15px #600000;
+}
+
+.juego-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+}
+
+.juego-info {
+    padding: 20px;
+}
+
+.juego-info h3 {
+    color: #e00000;
+    font-size: 21px;
+    margin: 0 0 15px 0;
+}
+
+.juego-info p {
+    color: #cccccc;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.juego-info strong {
+    color: #ffffff;
+}
+
+@media (max-width: 900px) {
+    .otros-juegos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .otros-juegos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .otros-juegos h2 {
+        font-size: 30px;
+    }
+}
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         ENCABEZADO
+    ====================================== -->
+
+    <header>
+
+        <h1>
+            Shin Megami Tensei III: Nocturne
+        </h1>
+
+        <p>
+            El mundo ha llegado a su fin...
+        </p>
+
+    </header>
+
+
+
+    <main class="contenedor">
+
+
+        <!-- =====================================
+             PORTADA
+        ====================================== -->
+
+        <section class="portada">
+
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSshE5DMme7bE9vz27zxsDYogrqRaEAu4fbxx_aPhpJCbInabe6C2_psMix&s=10"
+                alt="Portada de Shin Megami Tensei III: Nocturne"
+            >
+
+        </section>
+
+
+
+        <!-- =====================================
+             INFORMACIÓN DEL JUEGO
+        ====================================== -->
+
+        <section class="informacion">
+
+            <h2>
+                Sobre el juego
+            </h2>
+
+            <p>
+                Shin Megami Tensei III: Nocturne es un videojuego de
+                rol japonés desarrollado por Atlus. La historia comienza
+                cuando Tokio es destruido durante un acontecimiento
+                sobrenatural conocido como la Concepción.
+            </p>
+
+            <p>
+                El protagonista sobrevive al cataclismo y se transforma
+                en el Demi-fiend, un ser mitad humano y mitad demonio.
+                En un Tokio convertido en un mundo desolado, deberá
+                enfrentarse a numerosos demonios mientras descubre las
+                distintas filosofías que buscan determinar cómo será
+                el nuevo mundo.
+            </p>
+
+            <p>
+                El juego combina exploración, combates por turnos,
+                negociación y fusión de demonios. Su sistema Press Turn
+                recompensa al jugador por explotar las debilidades de
+                los enemigos.
+            </p>
+
+
+            <div class="datos">
+
+                <div class="dato">
+                    <strong>Género:</strong>
+                    RPG / JRPG
+                </div>
+
+                <div class="dato">
+                    <strong>Desarrollador:</strong>
+                    Atlus
+                </div>
+
+                <div class="dato">
+                    <strong>Serie:</strong>
+                    Shin Megami Tensei
+                </div>
+
+                <div class="dato">
+                    <strong>Combate:</strong>
+                    Por turnos
+                </div>
+
+                <div class="dato">
+                    <strong>Protagonista:</strong>
+                    Demi-fiend
+                </div>
+
+                <div class="dato">
+                    <strong>Ambientación:</strong>
+                    Tokio postapocalíptico
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             GALERÍA
+        ====================================== -->
+
+        <section class="galeria">
+
+            <h2>
+                Gameplay
+            </h2>
+
+            <div class="imagenes">
+
+
+                <div class="imagen">
+
+                    <img
+                        src="https://shinmegami.wordpress.com/wp-content/uploads/2013/01/nocturne.jpg"
+                        alt="Exploración"
+                    >
+
+                    <p>
+                        Exploración del mundo
+                    </p>
+
+                </div>
+
+
+                <div class="imagen">
+
+                    <img
+                        src="https://rpgamer.com/wp-content/uploads/2021/04/Shin-Megami-Tensei-III-Imp-2.jpg"
+                        alt="Combate"
+                    >
+
+                    <p>
+                        Combate contra demonios
+                    </p>
+
+                </div>
+
+
+                <div class="imagen">
+
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFIZSuuiPkF27-jd2qb3EIaqnJMAn9GeY4iO4RZOS0bHzNQEuxnZFy_hWo&s=10"
+                        alt="Demonios"
+                    >
+
+                    <p>
+                        Encuentros con demonios
+                    </p>
+
+                </div>
+
+
+                <div class="imagen">
+
+                    <img
+                        src="https://i.ytimg.com/vi/0ZojjlZorkg/hqdefault.jpg"
+                        alt="Fusión"
+                    >
+
+                    <p>
+                        Fusión de demonios
+                    </p>
+
+                </div>
+
+
+                <div class="imagen">
+
+                    <img
+                        src="https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/22536285/ss_a4d30220223c122c15c5c5fefcbd8e250ab79ba2.jpg?quality=90&strip=all&crop=7.8125%2C0%2C84.375%2C100&w=2400"
+                        alt="Demi-fiend"
+                    >
+
+                    <p>
+                        Demi-fiend
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             SECCIÓN DEMONIOS
+        ====================================== -->
+
+        <section class="seccion">
+
+            <h2>
+                Demonios
+            </h2>
+
+
+            <div class="seccion-introduccion">
+
+                <p>
+                    Los demonios son una de las partes fundamentales de
+                    Shin Megami Tensei III: Nocturne. A lo largo de su
+                    viaje, el Demi-fiend puede encontrarse con diferentes
+                    criaturas sobrenaturales y convertirlas en miembros
+                    de su grupo.
+                </p>
+
+                <p>
+                    Los demonios pueden ayudar durante los combates,
+                    aprender habilidades y adquirir experiencia. Además,
+                    pueden ser utilizados para crear demonios más
+                    poderosos mediante la fusión.
+                </p>
+
+                <p>
+                    Cada demonio pertenece a una determinada raza y
+                    posee diferentes estadísticas, habilidades,
+                    resistencias y debilidades.
+                </p>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 CÓMO CONSEGUIR DEMONIOS
+            ====================================== -->
+
+            <h2>
+                ¿Cómo se consiguen?
+            </h2>
+
+
+            <div class="metodos">
+
+
+                <div class="metodo">
+
+                    <h3>
+                        Negociación
+                    </h3>
+
+                    <p>
+                        Durante algunos combates, el Demi-fiend puede
+                        hablar con los demonios. Dependiendo de sus
+                        respuestas y de lo que soliciten, pueden aceptar
+                        unirse al grupo.
+                    </p>
+
+                </div>
+
+
+                <div class="metodo">
+
+                    <h3>
+                        Fusión
+                    </h3>
+
+                    <p>
+                        Dos o más demonios pueden combinarse para crear
+                        una nueva criatura. La fusión permite obtener
+                        demonios diferentes y transferir determinadas
+                        habilidades.
+                    </p>
+
+                </div>
+
+
+                <div class="metodo">
+
+                    <h3>
+                        Compendio
+                    </h3>
+
+                    <p>
+                        La Catedral permite registrar demonios. Los
+                        demonios registrados pueden ser invocados
+                        posteriormente a cambio de dinero.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =====================================
+                 CATEDRAL DE LAS SOMBRAS
+            ====================================== -->
+
+            <div class="catedral">
+
+                <h3>
+                    Catedral de las Sombras
+                </h3>
+
+                <p>
+                    La Catedral de las Sombras es el lugar donde el
+                    Demi-fiend puede realizar fusiones y administrar
+                    parte de su colección de demonios.
+                </p>
+
+                <p>
+                    Al combinar demonios es posible crear una criatura
+                    completamente diferente. La elección de los demonios
+                    utilizados en la fusión determina el resultado y
+                    puede permitir conservar algunas de sus habilidades.
+                </p>
+
+                <p>
+                    La Catedral también está relacionada con el
+                    Compendio de Demonios, donde pueden registrarse
+                    criaturas que ya hayan sido obtenidas.
+                </p>
+
+
+                <ul class="lista-catedral">
+
+                    <li>
+                        Fusionar demonios.
+                    </li>
+
+                    <li>
+                        Crear demonios más poderosos.
+                    </li>
+
+                    <li>
+                        Registrar demonios en el Compendio.
+                    </li>
+
+                    <li>
+                        Volver a invocar demonios registrados.
+                    </li>
+
+                    <li>
+                        Experimentar con diferentes combinaciones.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shin Megami Tensei III: Nocturne</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            background: #080808;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        /* =========================
+           SECCIÓN DEMONIOS
+        ========================= */
+
+        .demonios {
+            width: 90%;
+            max-width: 1200px;
+            margin: 50px auto;
+        }
+
+        .demonios h2 {
+            color: #d00000;
+            font-size: 40px;
+            border-bottom: 2px solid #d00000;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        /* =========================
+           INFORMACIÓN
+        ========================= */
+
+        .info-demonios {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .info-box {
+            background: #111111;
+            border: 1px solid #700000;
+            border-radius: 8px;
+            padding: 25px;
+        }
+
+        .info-box h3 {
+            color: #e00000;
+            margin-top: 0;
+            font-size: 23px;
+        }
+
+        .info-box p {
+            color: #cccccc;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        /* =========================
+           TARJETAS
+        ========================= */
+
+        .demonios h3.titulo-tarjetas {
+            color: #d00000;
+            font-size: 30px;
+            border-bottom: 1px solid #700000;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+        }
+
+        .demonios-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .demonio {
+            background: #111111;
+            border: 1px solid #700000;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .demonio:hover {
+            transform: translateY(-5px);
+            border-color: #ff0000;
+            box-shadow: 0 0 15px #600000;
+        }
+
+        .demonio img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .demonio-texto {
+            padding: 20px;
+        }
+
+        .demonio-texto h4 {
+            color: #e00000;
+            font-size: 22px;
+            margin: 0 0 10px 0;
+        }
+
+        .demonio-texto p {
+            color: #cccccc;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .info-demonios {
+                grid-template-columns: 1fr;
+            }
+
+            .demonios-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .demonios-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<section class="demonios">
+
+    <h2>Demonios</h2>
+
+
+    <!-- =========================
+         INFORMACIÓN SOBRE DEMONIOS
+    ========================= -->
+
+    <div class="info-demonios">
+
+        <div class="info-box">
+
+            <h3>¿Qué son los demonios?</h3>
+
+            <p>
+                Los demonios son seres sobrenaturales que habitan
+                el mundo de Shin Megami Tensei III: Nocturne.
+                Pueden ser enemigos, aliados o criaturas que el
+                protagonista puede reclutar para acompañarlo
+                durante su aventura.
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <h3>Razas de demonios</h3>
+
+            <p>
+                Los demonios están organizados en diferentes razas,
+                cada una con características, habilidades y
+                naturalezas distintas. Entre ellas se encuentran
+                razas como Hada, Kishin, Fiend, Deidad, Bestia,
+                Serpiente y muchas otras.
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <h3>¿Cómo se obtienen?</h3>
+
+            <p>
+                Durante la aventura, el protagonista puede conseguir
+                demonios mediante la negociación con ellos o
+                utilizando la fusión para crear nuevas criaturas.
+                Los demonios obtenidos pueden formar parte del
+                equipo y aprender diferentes habilidades.
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <h3>La fusión</h3>
+
+            <p>
+                La fusión permite combinar dos o más demonios para
+                crear uno nuevo. El resultado depende de los demonios
+                utilizados y puede producir criaturas con diferentes
+                habilidades y características.
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <h3>La Catedral de las Sombras</h3>
+
+            <p>
+                La Catedral de las Sombras es el lugar donde se
+                realizan las fusiones. Allí es posible combinar
+                demonios para crear criaturas más poderosas y
+                ampliar las posibilidades del equipo.
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <h3>El Compendio</h3>
+
+            <p>
+                El Compendio permite registrar los demonios que han
+                sido obtenidos durante la aventura. De esta forma,
+                pueden volver a ser invocados posteriormente,
+                facilitando la creación de nuevos equipos.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         DEMONIOS DESTACADOS
+    ========================= -->
+
+    <h3 class="titulo-tarjetas">Demonios destacados</h3>
+
+
+    <div class="demonios-grid">
+
+
+        <!-- TARJETA 1 -->
+
+        <div class="demonio">
+
+            <img src="https://img.game8.co/3362973/6c12b055bb20cecfc21cdf0a1ddb7972.jpeg/show" alt="Demonio">
+
+            <div class="demonio-texto">
+
+                <h4>Jack Frost</h4>
+
+                <p>
+                    Jack Frost es un espíritu originario de Inglaterra. 
+                    Es un duende de la nieve que trae el frío durante el 
+                    invierno y se cree que es el responsable de la escarcha
+                     que se forma en las ventanas de las casas y los edificios.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- TARJETA 2 -->
+
+        <div class="demonio">
+
+            <img src="https://img.game8.co/3372332/803776bd4648d30917547a159a44cbb5.png/show" alt="Demonio">
+
+            <div class="demonio-texto">
+
+                <h4>Cerbero</h4>
+
+                <p>
+                    En la mitología griega, Cerbero, también conocido como Kerberos, 
+                    es un monstruo y mascota del inframundo que custodia las puertas
+                    de este reino. Generalmente se le representa como un perro gigantesco
+                    y feroz con tres cabezas, aunque las descripciones pueden variar.
+                    Cerbero es, de hecho, la transliteración latina del nombre griego Kerberos.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- TARJETA 3 -->
+
+        <div class="demonio">
+
+            <img src="https://img.game8.co/3363562/ebec6798ca1c73424062460e517b8111.jpeg/show" alt="Demonio">
+
+            <div class="demonio-texto">
+
+                <h4>Ame-No-Uzume</h4>
+
+                <p>
+                    Ame-no-Uzume , también conocida como Ame-no-Uzume-no-Mikoto, la Gran Persuasora y
+                    la Diosa Celestial Alarmante, es la diosa del amanecer, la alegría, la meditación,
+                    la juerga y las artes en la religión sintoísta de Japón. Es la esposa de Sarutahiko.
+                    Su nombre también puede pronunciarse como Ama-no-Uzume, y también se la conoce como
+                    Oumiyanome-no-Ohkami, una kami inari, posiblemente debido a su relación con su esposo.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- TARJETA 4 -->
+
+        <div class="demonio">
+
+            <img src="https://img.game8.co/3365431/9bc42b50356bf15a534b4732b0d999d9.jpeg/show" alt="Demonio">
+
+            <div class="demonio-texto">
+
+                <h4>Mothman</h4>
+
+                <p>
+                    El Hombre Polilla es un críptido de origen americano. A mediados de la década de 1960, 
+                    se reportaron algunos avistamientos de una gran criatura alada con enormes ojos rojizos.
+                    Se cree (fuera del ámbito de la criptozoología) que podrían tratarse de grullas canadienses 
+                    o lechuzas comunes malinterpretadas.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- TARJETA 5 -->
+
+        <div class="demonio">
+
+            <img src="https://img.game8.co/3375069/26854e535377350adbf2774813ce0889.png/show" alt="Demonio">
+
+            <div class="demonio-texto">
+
+                <h4>Samael</h4>
+
+                <p>
+                    Samael , también conocido como Sammael o Samil, es un arcángel en la tradición talmúdica.
+                    Se le conoce como el seductor, el destructor y el acusador, y en diversos textos se le
+                    considera tanto bueno como malo. En la tradición rabínica, se revela como el jefe de los
+                    ejércitos de Satanás y el ángel de la muerte. Su nombre significa "veneno de Dios", lo que 
+                    sugiere que es la mano vengativa de Dios o su enemigo, e incluso se ha sugerido que Samael
+                    es el nombre angélico del propio Satanás.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- TARJETA 6 -->
+
+        <div class="demonio">
+
+            <img src="https://img.game8.co/3375072/bb41d1425d87d714fd14b87e8007b331.png/show" alt="Demonio">
+
+            <div class="demonio-texto">
+
+                <h4>Thor</h4>
+
+                <p>
+                   Thor (en nórdico antiguo: Þórr), también conocido como Thor Odinson, es el hijo pelirrojo de Odín y Jord,
+                    y es el dios del rayo, el trueno, las tormentas, los bosques sagrados y los árboles en la mitología nórdica 
+                    y el paganismo germánico. Thor es uno de los dioses más poderosos y usa su poder superior para proteger Asgard
+                    y Midgard. Debido a su sed de batalla y su increíble destreza, Thor también es representado como un dios de la 
+                    guerra y también como un dios de la agricultura debido a su estatus como deidad del clima que ayuda al crecimiento
+                     de los cultivos. Su cinturón Mejingjard duplica su fuerza y ​​destellos de rayos cada vez que lanza su fiel martillo, Mjolnir .
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- TARJETA 7 -->
+
+        <div class="demonio">
+
+            <img src="https://img.game8.co/3363563/894a07d5755e03181a8967ec5358d7ce.jpeg/show" alt="Demonio">
+
+            <div class="demonio-texto">
+
+                <h4>Arcangel</h4>
+
+                <p>
+                    Los arcángeles pertenecen a la octava esfera, ocupando el segundo lugar en la tercera jerarquía de los nueve órdenes angélicos según 
+                    las enseñanzas cristianas. Son uno de los pocos grupos de ángeles que se comunican directamente con los seres del plano material y
+                    actúan como ministros y mensajeros entre Dios y la humanidad. Existe controversia sobre si arcángeles famosos como Miguel y Gabriel 
+                    pertenecen a la misma clase que los arcángeles "simples", llamados en la Cábala y en la Biblia "Beni Elohim" (que significa "hijos de Dios"), 
+                    o si pertenecen a un orden completamente diferente conocido como "Rav-Malakhim" o "Malakhim-Panav", los ángeles que se presentan ante el propio Señor.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- TARJETA 8 -->
+
+        <div class="demonio">
+
+            <img src="https://img.game8.co/3372737/9e6e0aef8c1603971b5d53b0a321f343.png/show" alt="Demonio">
+
+            <div class="demonio-texto">
+
+                <h4>Metatròn</h4>
+
+                <p>
+                    Metatrón (de quien a veces se teoriza que originalmente era Enoc , padre de Matusalén y bisabuelo de Noé) es la voz de Dios . Cuando un ser humano cree que Dios
+                    le ha hablado directamente, en realidad es Metatrón actuando como su instrumento. Un millón de ojos y bocas cubren su cuerpo, y cada boca habla un idioma diferente.
+                    Es el ser más cercano en jerarquía a Dios. Se dice que tiene el cuerpo más grande entre todos los ángeles, con 36 alas, 3 de las cuales representan la trinidad del
+                    padre (Dios), el hijo ( Jesucristo ) y el espíritu santo , multiplicadas por las 12 tribus de Israel (el pueblo elegido de Dios). En el judaísmo antiguo, su estatus
+                    es incluso superior al del arcángel Miguel .
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- TARJETA 9 -->
+
+        <div class="demonio">
+
+            <img src="https://img.game8.co/3365050/2fe74e4732f5a9c4c4d4ef5207964c9e.png/show" alt="Demonio">
+
+            <div class="demonio-texto">
+
+                <h4>Matador</h4>
+
+                <p>
+                    Matador (" torero "), literalmente "asesino" en español y portugués, deriva del latín tardío mactator , que significa someter o matar. También es el nombre de los 
+                    toreros (a veces llamados "toreadors" en los territorios de habla inglesa debido a la influencia de Carmen ) cuyo trabajo consiste en matar al toro en las famosas 
+                    corridas de toros de España.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+<!-- =========================
+     BOSSES DE HISTORIA
+========================= -->
+
+<section class="bosses">
+
+    <h2>Bosses de historia</h2>
+
+    <div class="bosses-grid">
+
+        <!-- BOSS 1 -->
+        <div class="boss-card">
+            <img src="https://img.game8.co/3362517/b56263e6baa0cd1ad166587fd386791d.jpeg/show" alt="Boss 1">
+            <div class="boss-info">
+                <h3>Forneus</h3>
+                <p>Nivel: 4</p>
+            </div>
+        </div>
+
+        <!-- BOSS 2 -->
+        <div class="boss-card">
+            <img src="https://img.game8.co/3363093/248768979d598a22f5200c0b95a3650e.jpeg/show" alt="Boss 2">
+            <div class="boss-info">
+                <h3>Espectro</h3>
+                <p>Nivel: 14</p>
+            </div>
+        </div>
+
+        <!-- BOSS 3 -->
+        <div class="boss-card">
+            <img src="https://img.game8.co/3373632/8078ab5173a06d6917af87d7f3ae7531.jpeg/show" alt="Boss 3">
+            <div class="boss-info">
+                <h3>Thor</h3>
+                <p>Nivel: 22</p>
+            </div>
+        </div>
+
+        <!-- BOSS 4 -->
+        <div class="boss-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFSlfBBJ1IN62a7nvG0b7hTcEGx3q_F-NfuOAERfRel0LYmrg9CeV1OjWl&s=10" alt="Boss 4">
+            <div class="boss-info">
+                <h3>Berith</h3>
+                <p>Nivel: 25</p>
+            </div>
+        </div>
+
+        <!-- BOSS 5 -->
+        <div class="boss-card">
+            <img src="https://samurai-gamers.com/wp-content/uploads/2021/05/sg-smt-3-nocturne-hd-remaster-ose-demon-boss.png" alt="Boss 5">
+            <div class="boss-info">
+                <h3>Ose</h3>
+                <p>Nivel: 25</p>
+            </div>
+        </div>
+
+        <!-- BOSS 6 -->
+        <div class="boss-card">
+            <img src="https://i.ytimg.com/vi/Jnvl7bU1roI/maxresdefault.jpg" alt="Boss 6">
+            <div class="boss-info">
+                <h3>Kaiwan</h3>
+                <p>Nivel: 25</p>
+            </div>
+        </div>
+
+        <!-- BOSS 7 -->
+        <div class="boss-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThehNXUrApf9ikUFiklWXPrhcXwuPm7S11IxZwRS11iA&s=10" alt="Boss 7">
+            <div class="boss-info">
+                <h3>Mizuchi</h3>
+                <p>Nivel: 32</p>
+            </div>
+        </div>
+
+        <!-- BOSS 8 -->
+        <div class="boss-card">
+            <img src="https://i.ytimg.com/vi/sf4gTOib2_s/maxresdefault.jpg" alt="Boss 8">
+            <div class="boss-info">
+                <h3>Hermanas Moirae - Cloto, Láquesis, Átropos</h3>
+                <p>Nivel: 50</p>
+            </div>
+        </div>
+
+        <!-- BOSS 9 -->
+        <div class="boss-card">
+            <img src="https://img.game8.co/3367180/5b944739d7349178ac8c2bf019336de5.jpeg/show" alt="Boss 9">
+            <div class="boss-info">
+                <h3>Espctro (segundo encuentro)</h3>
+                <p>Nivel: 40</p>
+            </div>
+        </div>
+
+        <!-- BOSS 10 -->
+        <div class="boss-card">
+            <img src="https://i.ytimg.com/vi/ltbpCu68YZ0/hqdefault.jpg" alt="Boss 10">
+            <div class="boss-info">
+                <h3>Girimihkala</h3>
+                <p>Nivel: 50</p>
+            </div>
+        </div>
+
+        <!-- BOSS 11 -->
+        <div class="boss-card">
+            <img src="https://m.media-amazon.com/images/I/419NAra01DL._AC_UF350,350_QL80_.jpg" alt="Boss 11">
+            <div class="boss-info">
+                <h3>Sakahagi</h3>
+                <p>Nivel: 45</p>
+            </div>
+        </div>
+
+        <!-- BOSS 12 -->
+        <div class="boss-card">
+            <img src="https://img.game8.co/3369316/cfd12b321caf087daa0ea1a0e2f97a38.jpeg/show" alt="Boss 12">
+            <div class="boss-info">
+                <h3>Espectro (tercer encuentro)</h3>
+                <p>Nivel: 60</p>
+            </div>
+        </div>
+
+        <!-- BOSS 13 -->
+        <div class="boss-card">
+            <img src="https://img.game8.co/3371061/27d5013cc838341225b4f987bc57c401.jpeg/show" alt="Boss 13">
+            <div class="boss-info">
+                <h3>Aciel</h3>
+                <p>Nivel: 70</p>
+            </div>
+        </div>
+
+        <!-- BOSS 14 -->
+        <div class="boss-card">
+            <img src="https://i.ytimg.com/vi/6upFJRr1PtY/maxresdefault.jpg" alt="Boss 14">
+            <div class="boss-info">
+                <h3>Skadi</h3>
+                <p>Nivel: 70</p>
+            </div>
+        </div>
+
+        <!-- BOSS 15 -->
+        <div class="boss-card">
+            <img src="https://img.game8.co/3371054/3214ce7fbd2d5d5c2ec577196a3ffa9a.png/show" alt="Boss 15">
+            <div class="boss-info">
+                <h3>Albion & zoas</h3>
+                <p>Nivel: 70</p>
+            </div>
+        </div>
+
+        <!-- BOSS 16 -->
+        <div class="boss-card">
+            <img src="https://img.game8.co/3371605/375d66ecc2fa3cd6e3d63984a9407816.png/show" alt="Boss 16">
+            <div class="boss-info">
+                <h3>Gabriel, Rafael y Uriel</h3>
+                <p>Nivel: 73</p>
+            </div>
+        </div>
+
+        <!-- BOSS 17 -->
+        <div class="boss-card">
+            <img src="https://img.game8.co/3371968/8e808d4562a94e7730964e983e9d81d5.png/show" alt="Boss 17">
+            <div class="boss-info">
+                <h3>Futomimi</h3>
+                <p>Nivel: 73</p>
+            </div>
+        </div>
+
+        <!-- BOSS 18 -->
+        <div class="boss-card">
+            <img src="https://img.game8.co/3372700/7cf4cd6ae55258add7b4d26cc861c57e.png/show" alt="Boss 18">
+            <div class="boss-info">
+                <h3>Mot</h3>
+                <p>Nivel: 85</p>
+            </div>
+        </div>
+
+        <!-- BOSS 19 -->
+        <div class="boss-card">
+            <img src="https://img.game8.co/3376048/d8dac506f27817599e3e9cb1d7fb04a6.png/show" alt="Boss 19">
+            <div class="boss-info">
+                <h3>Mitra</h3>
+                <p>Nivel: 85</p>
+            </div>
+        </div>
+
+        <!-- BOSS 20 -->
+        <div class="boss-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAvDCdMKmzJyCnC6lcm0ms4KYwgxQU_YuispfSxacAZA&s=10" alt="Boss 20">
+            <div class="boss-info">
+                <h3>Samael</h3>
+                <p>Nivel: 85</p>
+            </div>
+        </div>
+
+        <!-- BOSS 21 -->
+        <div class="boss-card">
+            <img src="https://img.game8.co/3373479/bbc3d830ada106c689143b73b153be13.png/show" alt="Boss 21">
+            <div class="boss-info">
+                <h3>Ahriman</h3>
+                <p>Nivel: 80</p>
+            </div>
+        </div>
+
+        <!-- BOSS 22 -->
+        <div class="boss-card">
+            <img src="https://img.game8.co/3373561/866b7c6ce702cd5bec02f70cd4efaaec.png/show" alt="Boss 22">
+            <div class="boss-info">
+                <h3>Noah</h3>
+                <p>Nivel: 80</p>
+            </div>
+        </div>
+
+
+
+        <!-- BOSS 23 -->
+        <div class="boss-card">
+            <img src="https://img.game8.co/3373605/a032e6145e2b306e15f494cd5d2dffa4.png/show" alt="Boss 24">
+            <div class="boss-info">
+                <h3>Thor (Segundo encuentro)</h3>
+                <p>Nivel: 80</p>
+            </div>
+        </div>
+
+        <!-- BOSS 24 -->
+        <div class="boss-card">
+            <img src="https://img.game8.co/3373767/e044c62421daa4253afd5d58f17005e0.png/show" alt="Boss 25">
+            <div class="boss-info">
+                <h3>Baal</h3>
+                <p>Nivel: 83</p>
+            </div>
+        </div>
+
+
+        <!-- BOSS 25 -->
+        <div class="boss-card">
+            <img src="https://img.game8.co/3374111/888d05983df0d2f379b6c6b8eba2cac6.png/show" alt="Boss 27">
+            <div class="boss-info">
+                <h3>Kagutsuchi/h3>
+                <p>Nivel: 88</p>
+            </div>
+        </div>
+
+         <!-- BOSS 26 -->
+        <div class="boss-card">
+            <img src="https://img.game8.co/3374345/c36c9abbad49ea56100af6c4f787c0d5.png/show" alt="Boss 26">
+            <div class="boss-info">
+                <h3>Lucifer</h3>
+                <p>Nivel: 90</p>
+            </div>
+        </div>
+
+    </div>
+    
+
+</section>
+
+<!-- =========================
+     BOSSES DE MANIAX / CHRONICLES
+========================= -->
+
+<section class="bosses">
+
+    <h2>Bosses de Maniax / Chronicles</h2>
+
+    <div class="bosses-grid">
+
+        <!-- BOSS 1 -->
+        <div class="boss-card">
+            <img src="https://img.game8.co/3364015/ab5d053556238f6747e55190a2598404.png/show" alt="Boss Maniax 1">
+            <div class="boss-info">
+                <h3>Matador</h3>
+                <p>Nivel: 18</p>
+            </div>
+        </div>
+
+        <!-- BOSS 2 -->
+        <div class="boss-card">
+            <img src="https://img.game8.co/3364591/6b6079f92dda83745e642ed65ceb7fd6.png/show" alt="Boss Maniax 2">
+            <div class="boss-info">
+                <h3>Daisoujou</h3>
+                <p>Nivel: 23</p>
+            </div>
+        </div>
+
+        <!-- BOSS 3 -->
+        <div class="boss-card">
+            <img src="https://img.game8.co/3364740/9c32b86ab86b5991bcea85e4413ffb8b.png/show" alt="Boss Maniax 3">
+            <div class="boss-info">
+                <h3>Dante Sparda</h3>
+                <p>Nivel: 23</p>
+            </div>
+        </div>
+
+        <!-- BOSS 4 -->
+        <div class="boss-card">
+            <img src="https://i.ytimg.com/vi/_LNZwabm3TQ/hqdefault.jpg" alt="Boss Maniax 4">
+            <div class="boss-info">
+                <h3>Raidou Kuzunoha XIV</h3>
+                <p>Nivel: 23</p>
+            </div>
+        </div>
+
+        <!-- BOSS 5 -->
+        <div class="boss-card">
+            <img src="https://i.ytimg.com/vi/Vcxu8EX1YNE/maxresdefault.jpg" alt="Boss Maniax 5">
+            <div class="boss-info">
+                <h3>Motero del infierno</h3>
+                <p>Nivel: 30</p>
+            </div>
+        </div>
+
+        <!-- BOSS 6 -->
+        <div class="boss-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7SxmrtqQfmzzs2m4pWzlkK9ig8Sdz8rx10r0cxRy1xDTaNzCMctpI-Cs&s=10" alt="Boss Maniax 6">
+            <div class="boss-info">
+                <h3>Jinete Blanco/h3>
+                <p>Nivel: 42</p>
+            </div>
+        </div>
+
+        <!-- BOSS 7 -->
+        <div class="boss-card">
+            <img src="https://i.ytimg.com/vi/dNuA7I9WekM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDguK6S5uneBVmjGNvDZw1giZjt5Q" alt="Boss Maniax 7">
+            <div class="boss-info">
+                <h3>Jinete rojos</h3>
+                <p>Nivel: 45</p>
+            </div>
+        </div>
+
+        <!-- BOSS 8 -->
+        <div class="boss-card">
+            <img src="https://i.ytimg.com/vi/Ufj9hNHDiTc/maxresdefault.jpg" alt="Boss Maniax 8">
+            <div class="boss-info">
+                <h3>Jinete Negro</h3>
+                <p>Nivel: 55</p>
+            </div>
+        </div>
+
+        <!-- BOSS 9 -->
+        <div class="boss-card">
+            <img src="https://i.ytimg.com/vi/I0JiqLe-1pg/sddefault.jpg" alt="Boss Maniax 9">
+            <div class="boss-info">
+                <h3>Jinete palido</h3>
+                <p>Nivel: 65</p>
+            </div>
+        </div>
+
+        <!-- BOSS 10 -->
+        <div class="boss-card">
+            <img src="https://i.ytimg.com/vi/Fat6nIcFBdo/maxresdefault.jpg" alt="Boss Maniax 10">
+            <div class="boss-info">
+                <h3>Dante Sparda (Segundo encuentro)</h3>
+                <p>Nivel: 60</p>
+            </div>
+        </div>
+
+        <!-- BOSS 11 -->
+        <div class="boss-card">
+            <img src="https://samurai-gamers.com/wp-content/uploads/2021/05/Shin-Megami-Tensei-III-Nocturne-HD-Remaster-How-to-Get-Raidou-2.jpg" alt="Boss Maniax 11">
+            <div class="boss-info">
+                <h3>Raidou Kuzunoha XIV (Segundo encuentro)</h3>
+                <p>Nivel: 60</p>
+            </div>
+        </div>
+
+        <!-- BOSS 12 -->
+        <div class="boss-card">
+            <img src="https://img.game8.co/3372736/f977344ed98cbe1548d36db0937c28c1.png/show" alt="Boss Maniax 12">
+            <div class="boss-info">
+                <h3>Madre Babilonica</h3>
+                <p>Nivel: 60</p>
+            </div>
+        </div>
+
+        <!-- BOSS 13 -->
+        <div class="boss-card">
+            <img src="https://i.ytimg.com/vi/Sz-zhg5CA8M/sddefault.jpg" alt="Boss Maniax 13">
+            <div class="boss-info">
+                <h3>Trompetista</h3>
+                <p>Nivel: 65</p>
+            </div>
+        </div>
+
+        <!-- BOSS 14 -->
+        <div class="boss-card">
+            <img src="https://i.ytimg.com/vi/1QuwGOkS0T4/sddefault.jpg" alt="Boss Maniax 14">
+            <div class="boss-info">
+                <h3>Belzebuth</h3>
+                <p>Nivel: 65</p>
+            </div>
+        </div>
+
+        <!-- BOSS 15 -->
+        <div class="boss-card">
+            <img src="https://i.ytimg.com/vi/JKx6jkghnpc/maxresdefault.jpg" alt="Boss Maniax 15">
+            <div class="boss-info">
+                <h3>Metatron</h3>
+                <p>Nivel: 75</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     MINIJEFES
+========================= -->
+
+<section class="bosses">
+
+    <h2>Minijefes</h2>
+
+    <div class="bosses-grid">
+
+        <div class="boss-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRafF4sC5NaASnP5lD1d_FL4B6SuSRhltGLNPNr16Sr0r6ih8NQKKrbPqoz&s=10" alt="Minijefe 1">
+            <div class="boss-info">
+                <h3>Troll</h3>
+                <p>Nivel: 15</p>
+            </div>
+        </div>
+
+        <div class="boss-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ77R35C1I0xIwnfJrXHSI_4ev_U_dusEcDi3TTTl5FpWA6RwlDrQ_eiwYW&s=10" alt="Minijefe 2">
+            <div class="boss-info">
+                <h3>Orthus</h3>
+                <p>Nivel: 22</p>
+            </div>
+        </div>
+
+        <div class="boss-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ18AkWZlvWTNVkJcE0xVGy8WYwGTSMQs2w8Ea9dIDEoA&s" alt="Minijefe 3">
+            <div class="boss-info">
+                <h3>Yaksini</h3>
+                <p>Nivel: 22</p>
+            </div>
+        </div>
+
+        <div class="boss-card">
+            <img src="https://samurai-gamers.com/wp-content/uploads/2021/05/sg-smt-3-nocturne-hd-remaster-eligor-demon-boss.png" alt="Minijefe 4">
+            <div class="boss-info">
+                <h3>Eligor</h3>
+                <p>Nivel: 23</p>
+            </div>
+        </div>
+
+        <div class="boss-card">
+            <img src="https://img.game8.co/3365001/374a9737a105ca26bb91a9ba740ca918.png/show" alt="Minijefe 5">
+            <div class="boss-info">
+                <h3>Koppa Tengu e Incubus</h3>
+                <p>Nivel: 23</p>
+            </div>
+        </div>
+
+        <div class="boss-card">
+            <img src="https://static.wikia.nocookie.net/megamitensei/images/0/00/Naga_model.png/revision/latest/scale-to-width-down/250?cb=20120421003330" alt="Minijefe 6">
+            <div class="boss-info">
+                <h3>Naga</h3>
+                <p>Nivel: 30</p>
+            </div>
+        </div>
+
+        <div class="boss-card">
+            <img src="https://i.ytimg.com/vi/Hp9mDIJSVu8/maxresdefault.jpg" alt="Minijefe 7">
+            <div class="boss-info">
+                <h3>Surt</h3>
+                <p>Nivel: 80</p>
+            </div>
+        </div>
+
+        <div class="boss-card">
+            <img src="https://static.wikia.nocookie.net/megamitensei/images/c/ce/Imagine-Mada.jpg/revision/latest?cb=20130928120728" alt="Minijefe 8">
+            <div class="boss-info">
+                <h3>Mada</h3>
+                <p>Nivel: 80</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     JEFES OPCIONALES
+========================= -->
+
+<section class="bosses">
+
+    <h2>Jefes opcionales</h2>
+
+    <div class="bosses-grid">
+
+        <div class="boss-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9F-mnKsoS3MzlZAJ2mfVdvUl8teXeFZ-c4DOi9jeFAdEB5zl7ZYlHu0xx&s=10" alt="Jefe opcional 1">
+            <div class="boss-info">
+                <h3>Nekomata</h3>
+                <p>Nivel: 9</p>
+            </div>
+        </div>
+
+        <div class="boss-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWbjoeMRSanwE9GSbZHtAxAYsEWyBpx_FMPttvkXK0WgR8xgAuUC3atUGf&s=10" alt="Jefe opcional 2">
+            <div class="boss-info">
+                <h3>Oni</h3>
+                <p>Nivel: 20</p>
+            </div>
+        </div>
+
+        <div class="boss-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhi2tIMxpMJ2Iz_eOzjetflsSygDXW7aM_0W4KLc8WW4LLkXZ7hw4I-3k&s=10" alt="Jefe opcional 3">
+            <div class="boss-info">
+                <h3>Fuu-ki</h3>
+                <p>Nivel: 30</p>
+            </div>
+        </div>
+
+        <div class="boss-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWw1_KsGKRdCtE8WJI_n0rdWKmUFjgGjtUye6J4Z_jIYD8dDsFTXB3V-s&s=10" alt="Jefe opcional 4">
+            <div class="boss-info">
+                <h3>Kin-ki</h3>
+                <p>Nivel: 35</p>
+            </div>
+        </div>
+
+        <div class="boss-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd7cpqQ0jkWBipXktX7_Vx4Wcw3mMIz8m-a0mPnJL8aKv2QchhQSUYYDIc&s=10 alt="Jefe opcional 5">
+            <div class="boss-info">
+                <h3>Sui-ki</h3>
+                <p>Nivel: 35</p>
+            </div>
+        </div>
+
+        <div class="boss-card">
+            <img src="https://samurai-gamers.com/wp-content/uploads/2021/05/sg-smt-3-nocturne-hd-remaster-ongyo-ki-demon-boss.png" alt="Jefe opcional 6">
+            <div class="boss-info">
+                <h3>Ongyo-ki</h3>
+                <p>Nivel: --</p>
+            </div>
+        </div>
+
+        <div class="boss-card">
+            <img src="https://cdn.staticneo.com/ew/thumb/a/a4/SMT_III_Nocturne_Black_Frost_4.jpg/730px-SMT_III_Nocturne_Black_Frost_4.jpg" alt="Jefe opcional 7">
+            <div class="boss-info">
+                <h3>Black frost</h3>
+                <p>Nivel: 70</p>
+            </div>
+        </div>
+
+        <div class="boss-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgEpmA7tvZY3fsWvRxP8_09Xp6h_1iN9ZTdkqOU1HGZRDWJF_yxsh0IzE&s=10" alt="Jefe opcional 8">
+            <div class="boss-info">
+                <h3>Mara</h3>
+                <p>Nivel: 70</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================
+     PERSONAJES CLAVE
+========================= -->
+
+<section class="personajes">
+
+    <h2>Personajes clave</h2>
+
+    <div class="personajes-grid">
+
+        <!-- PERSONAJE 1 -->
+        <div class="personaje-card">
+            <img src="https://i.redd.it/e1a08ri994sg1.jpeg" alt="Personaje 1">
+
+            <div class="personaje-info">
+                <h3>Naoki Kashima (Demi-fiend)</h3>
+
+                <p>
+                    Descrito como un estudiante de secundaria tokiota común y corriente, el protagonista se ve envuelto en la cadena de acontecimientos que culminan
+                     con la destrucción de Tokio. Su fatídica visita al Centro Médico de Shinjuku le permite convertirse en uno de los pocos humanos que sobreviven a la Concepción.
+
+                    El protagonista despierta en el Mundo del Vórtice transformado. Antes humano, ahora es el Semidemonio: mitad humano y mitad demonio. Encargado por su difunta maestra, Yuko Takao,
+                    de encontrar respuestas, debe recorrer un Tokio distorsionado en busca de la verdad sobre la Concepción y su transformación.
+                </p>
+            </div>
+        </div>
+
+
+        <!-- PERSONAJE 2 -->
+        <div class="personaje-card">
+            <img src="https://img.game8.co/3360061/2f9d561ea2ac6461d112414212213a30.jpeg/show" alt="Personaje 2">
+
+            <div class="personaje-info">
+                <h3>Isamu Nitta</h3>
+
+                <p>
+                    Isamu, bromista por naturaleza, es una persona relajada que prefiere vivir la vida sin preocupaciones, pero tiende a depender demasiado de los demás y se deja influenciar fácilmente por las opiniones ajenas. 
+                    A pesar de haber sobrevivido a los sucesos de la Concepción, Isamu ahora debe enfrentarse a un mundo infestado de demonios, siendo uno de los últimos humanos solitarios que quedan en un Tokio devastado.
+                </p>
+            </div>
+        </div>
+
+
+        <!-- PERSONAJE 3 -->
+        <div class="personaje-card">
+            <img src="https://img.game8.co/3360255/90a62f474504a2cd511f2861d2db5d97.jpeg/show" alt="Personaje 3">
+
+            <div class="personaje-info">
+                <h3>Chiaki Tachibana</h3>
+
+                <p>
+                    Descrita como orgullosa y obstinada debido a su educación de clase alta, Chiaki es una de las pocas humanas que sobreviven a los acontecimientos de la Concepción.
+                </p>
+            </div>
+        </div>
+
+
+        <!-- PERSONAJE 4 -->
+        <div class="personaje-card">
+            <img src="https://img.game8.co/3360738/3b7aacad50d774c272fb2c264d548267.png/show" alt="Personaje 4">
+
+            <div class="personaje-info">
+                <h3>Hikawa</h3>
+
+                <p>
+                    El director de tecnología de Cybers Communication, un gigante de la industria de las telecomunicaciones, se unió al Anillo de Gea, un culto que veneraba demonios, en su búsqueda de la verdad.
+
+                    Insatisfecho con sus mezquinas disputas religiosas, decidió tomar cartas en el asunto e imponer la Concepción, todo ello en consonancia con las Escrituras proféticas de Miroku.
+
+                    Tranquilo, frío y calculador, Hikawa defiende un mundo de quietud, donde la razón no está atada a las emociones.
+                </p>
+            </div>
+        </div>
+
+
+        <!-- PERSONAJE 5 -->
+        <div class="personaje-card">
+            <img src="https://img.game8.co/3363910/ae99cc95840304ba941b4a44fe1cda61.png/show" alt="Personaje 5">
+
+            <div class="personaje-info">
+                <h3>Jyoji Hijiri</h3>
+
+                <p>
+                    El protagonista conoce a Hijiri en el Parque Yoyogi. Al parecer, Hijiri siente curiosidad por una reciente tragedia y está investigando el incidente. Como autor de una revista sobre ocultismo,
+                     parece tener conocimientos sobre sucesos de otro mundo.
+
+
+                    Tras enterarse de que el Protagonista se dirige al Centro Médico de Shinjuku, le advierte que el hospital es un centro de actividades sectarias.
+
+                    Poco después, se produce la Concepción. Hijiri se reencuentra con el Protagonista, quien ahora se ha transformado en un demonio. Sin inmutarse, Hijiri le ofrece su ayuda mientras intentan comprender 
+                    y adaptarse al nuevo Tokio surgido de la Concepción.
+                </p>
+            </div>
+        </div>
+
+
+        <!-- PERSONAJE 6 -->
+        <div class="personaje-card">
+            <img src="https://img.game8.co/3363896/c2236d097c3284fb602f0224a312c5c6.png/show" alt="Personaje 6">
+
+            <div class="personaje-info">
+                <h3>Yuko Takao</h3>
+
+                <p>
+                   El primer personaje que conoces al comenzar el juego, Yuko Takao, es la profesora del protagonista , Isamu y Chiaki . Al principio del juego, el protagonista y sus compañeros deben reunirse con Yuko 
+                   en el Centro Médico de Shinjuku.
+
+
+                    En extrañas circunstancias, se revela que ha estado colaborando con Hikawa y el Culto de Gea para desencadenar la Concepción. Deseando crear un mundo nuevo, asume el papel de la Doncella de la Creación, el pilar de dicho mundo.
+                </p>
+            </div>
+        </div>
+
+
+        <!-- PERSONAJE 7 -->
+        <div class="personaje-card">
+            <img src="https://img.game8.co/3376146/79fa654e11b53ee230a4daa2b01861ab.png/show" alt="Personaje 7">
+
+            <div class="personaje-info">
+                <h3>Futomimi</h3>
+
+                <p>
+                   Antes de la Concepción , Futomimi era un asesino en serie. A menudo se sentía en conflicto con su camino en la vida y secretamente anhelaba comprender la verdadera calidez humana.
+
+                    Tiempo después conoció a una chica y, durante su breve conversación, soltó: «Todos tenemos bondad en nuestro corazón». Esto marcó un punto de inflexión para el joven, quien comenzó a liberarse de su miserable identidad, con el objetivo 
+                    de convertirse en una persona querida por todos. Su alma fue una de las más fuertes que permanecieron en la Tierra tras la transformación de Tokio en el Mundo Vórtice , y su personalidad deseada emergió en forma de un Maniquí con el poder de ver el futuro.
+                    Posteriormente, se convirtió en el líder de todos los Maniquíes.
+                </p>
+            </div>
+        </div>
+
+
+        <!-- PERSONAJE 8 -->
+        <div class="personaje-card">
+            <img src="https://static.wikia.nocookie.net/megamitensei/images/4/4f/ChildLCyphre.png/revision/latest/scale-to-width-down/1000?cb=20250124035657" alt="Personaje 8">
+
+            <div class="personaje-info">
+                <h3>Louis Cyphre (Lucifer)</h3>
+
+                <p>
+                   Aunque no se le nombra, Lucifer adopta dos formas distintas: la de un anciano y la de un niño. El anciano y el joven Lucifer aparecen acompañados, respectivamente, por una joven y una anciana enfermera vestida de luto. El niño aparece por primera vez en el Hospital Shinjuku, 
+                   donde mira fijamente al protagonista y le susurra algo a la enfermera que lo acompaña. Sin embargo, cuando el protagonista intenta acercarse, el niño se da la vuelta y desaparece de su vista.
+
+                    Tras la Concepción , el chico parece intrigado por el protagonista. Sin embargo, para que este pueda sobrevivir en un mundo ahora infestado de demonios, deja caer un Magatama en su ojo, permitiendo que el parásito se fusione con él. Posteriormente, el Semidemonio se transforma en un demonio.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     RAZONES / FACCIONES
+========================= -->
+
+<section class="facciones">
+
+    <h2>Razones y finales</h2>
+
+    <div class="facciones-grid">
+
+
+        <!-- FACCION 1 -->
+        <div class="faccion-card">
+
+            <img src="https://static.wikia.nocookie.net/megamitensei/images/f/f0/AhrimanA2.jpg/revision/latest/scale-to-width-down/250?cb=20220116105852" alt="Líder de la facción 1">
+
+            <div class="faccion-info">
+
+                <h3>Shijima (Tranquilidad)</h3>
+
+                <h4>Líder o proclamada por: Hikawa</h4>
+
+                <p>
+                    Busca un mundo de orden absoluto, silencio y quietud pero elimina el libre albedrío y las pasiones humanas para evitar el sufrimiento y los conflictos, logrando una paz total pero fría.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- FACCION 2 -->
+        <div class="faccion-card">
+
+            <img src="https://samurai-gamers.com/wp-content/uploads/2021/05/Shin-Megami-Tensei-III-Nocturne-HD-Remaster-Musubi-Ending.jpg" alt="Líder de la facción 2">
+
+            <div class="faccion-info">
+
+                <h3>Musubi (Individualidad)</h3>
+
+                <h4>Líder o proclamada por: Isamu Nitta</h4>
+
+                <p>
+                    Busca crear un mundo donde cada individuo existe en su propio universo aislado y autosuficiente donde nadie depende de los demás ni interfiere en la vida ajena, priorizando la completa independencia a cambio de la total desconexión social.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- FACCION 3 -->
+        <div class="faccion-card">
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFPbu_L7AwpXj26oOviN9Og22fjS_bJL9Y1tizcgdCaQ&s=10" alt="Líder de la facción 3">
+
+            <div class="faccion-info">
+
+                <h3>Yosuga (Fuerza)</h3>
+
+                <h4>Líder o proclamada por: Chiaki Tachibana</h4>
+
+                <p>
+                    Busca establecer una meritocracia radical basada en el darwinismo social donde los fuertes gobiernan y tienen derecho a prosperar, mientras que los débiles son descartados, bajo la idea de que solo lo fuerte es bello y valioso.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- FACCION 4 -->
+        <div class="faccion-card">
+
+            <img src="https://static.wikia.nocookie.net/megamitensei/images/d/d4/Collectormanikinmugshot.jpg/revision/latest?cb=20211204115946" alt="Líder de la facción 4">
+
+            <div class="faccion-info">
+
+                <h3>Maniquíes</h3>
+
+                <h4>Líder: Futomimi</h4>
+
+                <p>
+                    Seres con apariencia humana y cuerpo de arcilla que habitan exclusivamente en el Mundo del Vórtice.
+                    Son creados a partir de las aguas fangosas de Asakusa, su hogar principal y refugio bajo el liderazgo de Futomimi.
+                    Aunque piensan, sienten y tienen capacidades físicas similares a los humanos, no son humanos reales, por lo que no pueden crear una "Razón" propia (el ideal para moldear el nuevo mundo).
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- FACCION 5 -->
+        <div class="faccion-card">
+
+            <img src="https://static0.cbrimages.com/wordpress/wp-content/uploads/2021/07/smt-7.jpg?q=50&fit=crop&w=825&dpr=1.5" alt="Líder de la facción 5">
+
+            <div class="faccion-info">
+
+                <h3>True demon ending</h3>
+
+                <h4>Líder: Demifiend</h4>
+
+                <p>
+                    el Semidemonio (Demi-fiend) destruye el ciclo de la creación y se une a las fuerzas del Caos de Lucifer para librar una guerra definitiva contra Dios (la Gran Voluntad tambien conocida como el Axioma).
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- FACCION 6 -->
+        <div class="faccion-card">
+
+            <img src="https://static0.cbrimages.com/wordpress/wp-content/uploads/2021/07/IMG-2794.jpg?q=50&fit=crop&w=825&dpr=1.5" alt="Líder de la facción 6">
+
+            <div class="faccion-info">
+
+                <h3>Libertad</h3>
+
+                <h4>Líder: Demi fiend</h4>
+
+                <p>
+                   Rechaza toda influencia sobrenatural en favor de que la humanidad controle su propio destino. Si bien esto le niega a la Tierra la posibilidad de recreación, también empodera a sus habitantes al dejar el futuro en sus manos. Por ello, se asemeja al humanismo, 
+                   una creencia secular que sostiene que la ética y los valores se fundamentan exclusivamente en la naturaleza y la experiencia humanas.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="invitados">
+    <h2>Invitados / Personajes especiales</h2>
+
+    <div class="invitados-grid">
+
+        <div class="invitado-card">
+            <img src="https://assetsio.gnwcdn.com/featuring-dante-from-the-devil-may-cry-series-shin-megami-tensei-3-nocturne-hd-remaster-1597222686797.jpg?width=1600&height=900&fit=crop&quality=100&format=png&enable=upscale&auto=webp" alt="Dante">
+
+            <div class="invitado-info">
+                <h3>Dante Sparda</h3>
+
+                <h4>Lugar de procedencia</h4>
+                <p>Devil May Cry</p>
+
+                <h4>Descripción</h4>
+                <p>
+                    Dante es un cazador de demonios que aparece en la versión
+                    Maniax de Shin Megami Tensei III: Nocturne. Es conocido por
+                    su estilo de combate, sus armas y su habilidad para
+                    enfrentarse a demonios.
+                </p>
+
+                <h4>Razón de su presencia</h4>
+                <p>
+                    Dante aparece como un personaje invitado proveniente de la
+                    serie Devil May Cry. Su participación sirve como un
+                    crossover entre ambas franquicias y se integra como un
+                    personaje que puede acompañar al Demi-fiend durante su
+                    recorrido.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="invitado-card">
+            <img src="https://external-preview.redd.it/if-raidou-had-his-own-theme-for-his-boss-fight-in-smt-3-hd-v0-qn6txe1amZ58wWXK665ycUrk8-6fHQaa6D9ljhxl5D0.png?width=640&crop=smart&format=pjpg&auto=webp&s=d6f12f5548e2c36fbfd8b949032da79f71c05218" alt="Raidou Kuzunoha">
+
+            <div class="invitado-info">
+                <h3>Raidou Kuzunoha XIV</h3>
+
+                <h4>Lugar de procedencia</h4>
+                <p>Devil Summoner: Raidou Kuzunoha</p>
+
+                <h4>Descripción</h4>
+                <p>
+                    Raidou Kuzunoha es un Devil Summoner perteneciente a una
+                    larga línea de investigadores y cazadores de demonios.
+                    Utiliza sus habilidades de invocación y combate para
+                    enfrentarse a las amenazas sobrenaturales.
+                </p>
+
+                <h4>Razón de su presencia</h4>
+                <p>
+                    Raidou sustituye a Dante en las versiones Chronicles de
+                    Shin Megami Tensei III: Nocturne. Su inclusión conecta el
+                    juego con la serie Devil Summoner y añade una nueva
+                    interacción con el Demi-fiend.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+<section class="red-amala">
+    <h2>La Red de Amala</h2>
+
+    <div class="amala-introduccion">
+        <img src="https://lparchive.org/Shin-Megami-Tensei-Nocturne-(by-FrankZP)/Update%2028/51-SMT3-3187.jpg" alt="Red de Amala">
+
+        <div class="amala-texto">
+            <h3>¿Qué es la Red de Amala?</h3>
+
+            <p>
+                La Red de Amala es una dimensión que conecta diferentes
+                lugares, mundos y realidades dentro del universo de
+                Shin Megami Tensei. En Shin Megami Tensei III: Nocturne,
+                el protagonista puede acceder a ella mediante diferentes
+                puntos repartidos por el Mundo Vórtice.
+            </p>
+
+            <p>
+                A través de la Red de Amala, el Demi-fiend puede viajar entre
+                distintas zonas, conocer personajes y descubrir información
+                relacionada con el origen del mundo y los acontecimientos
+                que rodean a Kagutsuchi.
+            </p>
+        </div>
+    </div>
+
+    <div class="amala-conexion">
+
+        <div class="amala-box">
+            <h3>Conexión entre mundos</h3>
+            <p>
+                La Red de Amala permite interpretar el universo de Shin
+                Megami Tensei como un conjunto de mundos y realidades
+                relacionadas entre sí. Esto ayuda a explicar por qué
+                diferentes juegos pueden presentar versiones distintas
+                de la humanidad, los demonios y los acontecimientos
+                apocalípticos.
+            </p>
+        </div>
+
+        <div class="amala-box">
+            <h3>La cosmología de SMT</h3>
+            <p>
+                La Red de Amala está relacionada con conceptos recurrentes
+                de la saga, como la creación de mundos, las distintas
+                realidades y la existencia de entidades que trascienden
+                una sola historia.
+            </p>
+        </div>
+
+        <div class="amala-box">
+            <h3>Conexión con otros juegos</h3>
+            <p>
+                Su existencia permite establecer conexiones temáticas y
+                conceptuales con otros títulos de Shin Megami Tensei.
+                Sin embargo, esto no significa que todos los juegos
+                ocurran literalmente en la misma línea temporal.
+            </p>
+        </div>
+
+        <div class="amala-box">
+            <h3>El Laberinto de Amala</h3>
+            <p>
+                Dentro de Nocturne se encuentra el Laberinto de Amala,
+                una zona opcional formada por diferentes niveles o
+                Kalpas. Allí el Demi-fiend descubre información adicional
+                sobre la cosmología del juego y puede enfrentarse a
+                algunos de los enemigos más poderosos de la aventura.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="amala-saga">
+        <h3>¿Cómo conecta con toda la saga?</h3>
+
+        <p>
+            La Red de Amala puede entenderse como una representación de
+            la idea de que existen múltiples mundos dentro de la
+            cosmología de Shin Megami Tensei. Cada juego puede presentar
+            su propia versión de los acontecimientos, mientras que
+            determinados conceptos, personajes y entidades aparecen
+            repetidamente en diferentes títulos.
+        </p>
+
+        <p>
+            Por esta razón, Nocturne puede verse como una historia
+            independiente y, al mismo tiempo, como una pieza dentro de
+            una cosmología mucho más grande. La Red de Amala refuerza
+            precisamente esa sensación de que el Mundo Vórtice es solo
+            una de las muchas realidades posibles.
+        </p>
+    </div>
+</section>
+<section class="otros-juegos">
+    <h2>Otros juegos</h2>
+
+    <div class="otros-juegos-grid">
+
+        <div class="juego-card">
+            <img src="https://i.3djuegos.com/juegos/8867/shin_megami_tensei_4/fotos/ficha/shin_megami_tensei_4-2204743.webp" alt="Shin Megami Tensei IV">
+
+            <div class="juego-info">
+                <h3>Shin Megami Tensei IV</h3>
+
+                <p><strong>Año de salida:</strong> 2013</p>
+
+                <p>
+                    Shin Megami Tensei IV lleva la fórmula de la saga a una
+                    nueva historia ambientada en un Japón transformado por
+                    conflictos entre humanos, demonios y distintas fuerzas
+                    sobrenaturales.
+                </p>
+
+                <p>
+                    <strong>Plataforma:</strong> Nintendo 3DS
+                </p>
+            </div>
+        </div>
+
+
+        <div class="juego-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT12g0Unt6JaUZGHXzJTXzg6SiYYt9Poqr2mLArSDfrQw&s=10" alt="Shin Megami Tensei V">
+
+            <div class="juego-info">
+                <h3>Shin Megami Tensei V</h3>
+
+                <p><strong>Año de salida:</strong> 2021</p>
+
+                <p>
+                    Shin Megami Tensei V presenta una versión devastada de
+                    Tokio conocida como Da'at. El protagonista se convierte
+                    en un Nahobino y debe enfrentarse a demonios y seres
+                    divinos mientras decide el futuro del mundo.
+                </p>
+
+                <p>
+                    <strong>Plataforma:</strong> Nintendo Switch, Xbox one, Xbox series X|S, Playstation 4, Playstation 5
+                </p>
+            </div>
+        </div>
+
+
+        <div class="juego-card">
+            <img src="https://media.vandal.net/m/5951/shin-megami-tensei-digital-devil-saga-2014219181143_1.jpg" alt="Shin Megami Tensei Digital Devil Saga">
+
+            <div class="juego-info">
+                <h3>Digital Devil Saga</h3>
+
+                <p><strong>Año de salida:</strong> 2004</p>
+
+                <p>
+                    Digital Devil Saga es un spin-off de Shin Megami Tensei
+                    que presenta a un grupo de guerreros capaces de
+                    transformarse en demonios. Mantiene elementos
+                    característicos de la franquicia, como los demonios,
+                    habilidades y combates por turnos.
+                </p>
+
+                <p>
+                    <strong>Plataformas:</strong> PlayStation 2
+                </p>
+            </div>
+        </div>
+
+
+        <div class="juego-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQicF3z2ks0lZo14bJLqhGEN03LbC3pa4KxzwbVx1Qr-A&s=10" alt="Devil Summoner Raidou Kuzunoha">
+
+            <div class="juego-info">
+                <h3>Devil Summoner: Raidou Kuzunoha vs. The Soulless Army</h3>
+
+                <p><strong>Año de salida:</strong> 2006</p>
+
+                <p>
+                    Esta entrega de Devil Summoner sigue a Raidou Kuzunoha,
+                    un Devil Summoner que investiga acontecimientos
+                    sobrenaturales en el Tokio de la era Taisho. A
+                    diferencia de Nocturne, utiliza combates en tiempo real.
+                </p>
+
+                <p>
+                    <strong>Plataforma:</strong> PlayStation 2
+                </p>
+            </div>
+        </div>
+
+
+        <div class="juego-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE0mEyShx_DCAEzas_mT82WSUEeApNovuoe1N_EwW9vA&s=10" alt="Persona 5">
+
+            <div class="juego-info">
+                <h3>Persona 5</h3>
+
+                <p><strong>Año de salida:</strong> 2016</p>
+
+                <p>
+                    Persona 5 es un spin-off de Megami Tensei que combina
+                    combates contra sombras con una vida escolar y
+                    actividades cotidianas. Los protagonistas utilizan
+                    Personas para enfrentarse a diferentes amenazas.
+                </p>
+
+                <p>
+                    <strong>Plataformas:</strong> PlayStation 3,
+                    PlayStation 4, Playstation 5, Xbox one, Xbox seris x|s, Nintendo Switch
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    </main>
+
+
+
+    <!-- =====================================
+         PIE DE PÁGINA
+    ====================================== -->
+
+    <footer>
+
+        <p>
+            Página informativa de Shin Megami Tensei III: Nocturne
+        </p>
+
+        <p>
+            Proyecto escolar de HTML
+        </p>
+
+    </footer>
+
+
+</body>
+</html>
